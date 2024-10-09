@@ -1,2 +1,13 @@
-GET https://j60o3wuyll.execute-api.us-west-1.amazonaws.com/prod/spaces
+GET https://uoy54wdna6.execute-api.us-west-1.amazonaws.com/prod/spaces
+###
+
+POST https://uoy54wdna6.execute-api.us-west-1.amazonaws.com/prod/spaces
+content-type: application/json
+
+{
+    "location": "LA"
+}
+###
+
+GET https://uoy54wdna6.execute-api.us-west-1.amazonaws.com/prod/spaces?id=343345
 ###
