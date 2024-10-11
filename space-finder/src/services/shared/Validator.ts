@@ -6,6 +6,9 @@ export class MissingFieldError extends Error {
     }
 }
 
+export class JsonError extends Error {
+}
+
 //check if each field has the args or not, if not throw error
 export function validateAsSpaceEntry(arg: any){
     if ((arg as SpaceEntry).location == undefined) {

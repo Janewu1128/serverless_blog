@@ -4,7 +4,7 @@ import { postSpaces } from "./PostSpaces";
 import { getSpaces } from "./GetSpaces";
 import { updateSpaces } from "./UpdateSpaces";
 import { deleteSpaces} from "./DeleteSpaces";
-import { MissingFieldError } from "../shared/Validator";
+import { JsonError, MissingFieldError } from "../shared/Validator";
 
 //outside handler can remain and be reused on further calls
 //first make connection to the databse and reuse that connection
@@ -38,7 +38,13 @@ async function handler(event: APIGatewayProxyEvent, context: Context): Promise<A
         if (error instanceof MissingFieldError){
             return {
                 statusCode: 400,
-                body: JSON.stringify(error.message)
+                body: error.message
+            }
+        }
+        if (error instanceof JsonError){
+            return {
+                statusCode: 400,
+                body: error.message
             }
         }
         return {

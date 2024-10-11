@@ -5,21 +5,22 @@ POST https://uoy54wdna6.execute-api.us-west-1.amazonaws.com/prod/spaces
 content-type: application/json
 
 {
-    "location": "LA"
+    "location": "LA",
+    "name": "Best travel location"
 }
 ###
 
-GET https://uoy54wdna6.execute-api.us-west-1.amazonaws.com/prod/spaces?id=343345
+GET https://uoy54wdna6.execute-api.us-west-1.amazonaws.com/prod/spaces?id=cbd90427-716f-4385-882d-1c374f89b4a7
 ###
 
 
-PUT  https://uoy54wdna6.execute-api.us-west-1.amazonaws.com/prod/spaces?id=343345
+PUT  https://uoy54wdna6.execute-api.us-west-1.amazonaws.com/prod/spaces?id=d9a6a3e8-5857-495c-9230-7c3f0ebe5293
 content-type: application/json
 
 {
-    "location": "Irvine2"
+    "location": "Santa Monica"
 }
 ###
 
-DELETE https://uoy54wdna6.execute-api.us-west-1.amazonaws.com/prod/spaces?id=343345
+DELETE https://uoy54wdna6.execute-api.us-west-1.amazonaws.com/prod/spaces?id=cdeb6d53-e79b-4f74-a72a-8ceb76806752
 ###
