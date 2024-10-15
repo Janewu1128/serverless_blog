@@ -5,7 +5,7 @@
 
 ## Local Build
 
-1. clone repository
+1. clone repository `https://github.com/Janewu1128/serverless_blog.git`  
 2. `$ cd space-finder`
 3. `$ npm init -y`  
 `$ npm i -D aws-cdk aws-cdk-lib constructs`  
