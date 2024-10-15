@@ -1,20 +1,14 @@
-# Serverless Blog
+## Serverless Blog App
 
-## Introduction
-### Built a serverless blog app using AWS and TypeScript
+> TypeScript, React; AWS, Lambda, ApiGateway, DynamoDB, S3, Amplify, Cognito, IAM
+
+### Introduction
+* Built a serverless blog app using AWS Lambda, API Gateway, DynamoDB and S3
+* Developed the frontend using the React framework, allowing CRUD (create, read, update, and delete) operations on each blog post
+* Implement user authentication with Amazon Cognito and IAM
 
 ## Local Build
 
-1. clone repository `https://github.com/Janewu1128/serverless_blog.git`  
-2. `$ cd space-finder`
-3. `$ npm init -y`  
-`$ npm i -D aws-cdk aws-cdk-lib constructs`  
-Install dependencies  
-`$ npm i -D typescript ts-node`  
-Install Typescript ts-node  
-`$ npm i -D @types/node`  
-Install library types for node
-
-## Folder logic
-- infra: CDK code
-- services: business logic
+1. Clone repository with `https://github.com/Janewu1128/serverless_blog.git`  
+2. Run `npm run deply`
+3. Open 
