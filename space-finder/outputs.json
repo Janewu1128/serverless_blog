@@ -12,6 +12,9 @@
   "LambdaStack": {
     "ExportsOutputFnGetAttSpacesLambdaA5F923A4ArnE59FF2BB": "arn:aws:lambda:us-west-1:746669222521:function:LambdaStack-SpacesLambdaA5F923A4-qvNR3YtOmNEY"
   },
+  "UiDeploymentStack": {
+    "SpaceFInderUrl": "d1mi95j7peoxv8.cloudfront.net"
+  },
   "ApiStack": {
     "SpacesApiEndpoint36C4F3B6": "https://uoy54wdna6.execute-api.us-west-1.amazonaws.com/prod/"
   }
