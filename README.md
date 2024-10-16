@@ -10,5 +10,5 @@
 ## Local Build
 
 1. Clone repository with `https://github.com/Janewu1128/serverless_blog.git`  
-2. Run `npm run deply`
+2. Run `npm run deploy`
 3. Open 
