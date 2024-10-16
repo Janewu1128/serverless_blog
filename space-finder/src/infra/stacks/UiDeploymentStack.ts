@@ -6,7 +6,7 @@ import { join } from "path";
 import { existsSync } from "fs";
 import { BucketDeployment, Source } from "aws-cdk-lib/aws-s3-deployment";
 import { AccessLevel, Distribution, OriginAccessIdentity } from "aws-cdk-lib/aws-cloudfront";
-import { S3BucketOrigin, S3Origin } from "aws-cdk-lib/aws-cloudfront-origins";
+import { S3BucketOrigin } from "aws-cdk-lib/aws-cloudfront-origins";
 
 
 export class UiDeploymentStack extends Stack {
@@ -41,18 +41,6 @@ export class UiDeploymentStack extends Stack {
                 origin: s3Origin
             }
         });
-
-        // const originIdentity = new OriginAccessIdentity(this, 'OriginAccessIdentity');
-        // deploymentBucket.grantRead(originIdentity);
-
-        // const distribution = new Distribution(this, 'SpacesFinderDistribution', {
-        //     defaultRootObject: 'index.html',
-        //     defaultBehavior: {
-        //         origin: new S3Origin(deploymentBucket, {
-        //             originAccessIdentity: originIdentity
-        //         })
-        //     }
-        // });
 
         new CfnOutput(this, 'SpaceFInderUrl', {
             value: distribution.distributionDomainName
