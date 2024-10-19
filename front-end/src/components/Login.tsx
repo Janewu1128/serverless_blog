@@ -12,7 +12,7 @@ export default function LoginComponent({ authService, setUserNameCb }: LoginProp
   const [password, setPassword] = useState<string>("");
   const [errorMessage, setErrorMessage] = useState<string>("");
   const [loginSuccess, setLoginSuccess] = useState<boolean>(false);
-  
+
   const handleSubmit = async (event: SyntheticEvent) => {
     event.preventDefault();
     if (userName && password) {
