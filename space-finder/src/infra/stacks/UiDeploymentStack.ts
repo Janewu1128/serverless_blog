@@ -20,7 +20,7 @@ export class UiDeploymentStack extends Stack {
             bucketName: `space-finder-frontend-${suffix}`
         });
 
-        const uiDir = join(__dirname, '..', '..', '..', '..', 'space-finder-frontend', 'dist');
+        const uiDir = join(__dirname, '..', '..', '..', '..', 'front-end', 'dist');
         if (!existsSync(uiDir)) {
             console.warn('Ui dir not found: ' + uiDir);
             return;
