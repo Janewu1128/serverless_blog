@@ -7,7 +7,7 @@ async function handler(event: SNSEvent, context) {
         await fetch(webHookUrl, {
             method: 'POST',
             body: JSON.stringify({
-                "text": `Huston, we have a problem: ${record.Sns.Message}`
+                "text": `We have a problem: ${record.Sns.Message}`
             })
         })
     }
