@@ -10,5 +10,6 @@
 ## Local Build
 
 1. Clone repository with `https://github.com/Janewu1128/serverless_blog.git`  
-2. Run `npm run deploy`
-3. Open 
+2. Run `npm run dev` to run the app locally
+3. Run `npm run build` to build the dist folder
+4. Blog App URl: d19o1vb12s42pl.cloudfront.net
