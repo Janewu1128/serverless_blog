@@ -1,6 +1,7 @@
 import { PutObjectCommand, S3Client } from "@aws-sdk/client-s3";
 import { AuthService } from "./AuthService";
 import { DataStack, ApiStack } from '../../../space-finder/outputs.json';
+import { SpaceEntry } from "../components/model/model";
 
 const spacesUrl = ApiStack.SpacesApiEndpoint36C4F3B6 + 'spaces'
 
@@ -12,6 +13,20 @@ export class DataService {
     
     constructor(authService: AuthService) {
         this.authService = authService;
+    }
+
+    public reserveSpace(spaceId: string) {
+        return '123';
+    }
+    public async getSpaces():Promise<SpaceEntry[]>{
+        const getSpacesResult = await fetch(spacesUrl, {
+            method: 'GET',
+            headers: {
+                'Authorization': this.authService.jwtToken!
+            }
+        });
+        const getSpacesResultJson = await getSpacesResult.json();
+        return getSpacesResultJson;
     }
 
     public async createSpace(name: string, location:string, photo?: File){
@@ -30,7 +45,7 @@ export class DataService {
                 'Authorization': this.authService.jwtToken!
             }
         });
-        
+
         const postResultJSON = await postResult.json();
         return postResultJSON.id
     }
@@ -55,6 +70,6 @@ export class DataService {
 
     
     public isAuthorized(){
-        return true;
+        return this.authService.isAuthorized();
     }
 }
