@@ -8,6 +8,7 @@ async function testAuth() {
         '123456789Test$'
     );
     const idToken = await service.getIdToken();
+    // if u need idToken, console.log the next line to get the token and paste in spaces.http @token
     // console.log(idToken);
     const credentials = await service.generateTemporaryCredentials(loginResult);
     const buckets = await listBuckets(credentials);
