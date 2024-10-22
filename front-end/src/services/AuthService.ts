@@ -1,7 +1,7 @@
 import { Amplify } from 'aws-amplify';
 import { SignInOutput, fetchAuthSession, signIn } from '@aws-amplify/auth';
 import { AuthStack } from '../../../space-finder/outputs.json'
-import { CognitoIdentityClient } from '@aws-sdk/client-cognito-identity';
+import { CognitoIdentityClient, GetCredentialsForIdentityCommand } from '@aws-sdk/client-cognito-identity';
 import { fromCognitoIdentityPool } from '@aws-sdk/credential-providers';
 
 const awsRegion = 'us-west-1';
@@ -20,8 +20,9 @@ export class AuthService {
 
     private user: SignInOutput | undefined;
     private userName: string = '';
-    private jwtToken: string | undefined;
+    public jwtToken: string | undefined;
     private temporaryCredentials: object | undefined;
+    awsRegion: any;
 
     public async login(userName: string, password: string):Promise<Object | undefined> {
         try {
@@ -64,6 +65,8 @@ export class AuthService {
         const credentials = await cognitoIdentity.config.credentials();
         return credentials
     }
+
+
     private async generateIdToken(){
         const session = await fetchAuthSession();
         this.jwtToken = session.tokens?.idToken?.toString();
